@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/effect_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4D Effect"
+        android:textSize="16sp" />
+
+    <SeekBar
+        android:id="@+id/effect_seek"
+        android:layout_width="300dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:max="10"
+        android:min="1"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/zoom_speed_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zoom Speed"
+        android:textSize="16sp" />
+
+    <SeekBar
+        android:id="@+id/zoom_speed_seek"
+        android:layout_width="300dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:max="5"
+        android:min="1"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/zoom_intensity_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zoom Intensity"
+        android:textSize="16sp" />
+
+    <SeekBar
+        android:id="@+id/zoom_intensity_seek"
+        android:layout_width="300dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:max="10"
+        android:min="1"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
