@@ -4,14 +4,12 @@
     package="com.example.opengllayerscode">
 
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
-    <application
-        tools:replace="android:theme"
-        android:theme="@style/Theme.OpenGlLayersCode"
-        >
+    <application>
 
         <activity
             android:name=".Activity4d"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.OpenGlLayersCode"
             android:exported="true"/>
 
         <service
