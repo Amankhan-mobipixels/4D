@@ -14,18 +14,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/set_wallpaper"
+        android:id="@+id/setting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_settings"
         android:layout_alignParentEnd="true"
-        android:layout_margin="20dp"/>
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_settings" />
 
     <Button
-        android:id="@+id/setting"
+        android:id="@+id/set_wallpaper"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Settings"
+        android:text="Set Video"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="20dp"/>
