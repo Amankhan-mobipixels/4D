@@ -13,12 +13,12 @@ add dependency in module level gradle
 ````
 dependencies:
 {
-implementation 'com.github.Amankhan-mobipixels:Admob-Ads:1.0.3'
+implementation 'com.github.Amankhan-mobipixels:4D:1.0.8'
 }
 ````
 How to use:
 
-        loadInterstitialAd(this, getString(R.string.interstitial_ad)) { loaded, failed ->
-            if (loaded) Log.d("adddddd", "loaded")
-            if (failed) Log.d("adddddd", "failed")
-        }
+     val intent = Intent(this, Activity4d::class.java)
+        intent.putIntegerArrayListExtra("images", images)
+        intent.putIntegerArrayListExtra("masks", masks)
+        startActivity(intent)
