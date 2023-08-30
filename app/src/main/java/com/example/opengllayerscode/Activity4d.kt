@@ -20,12 +20,12 @@ class Activity4d : AppCompatActivity() {
         binding = Preview4dBinding.inflate(layoutInflater)
         setContentView(binding.root)
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        val imagesData = intent.getIntegerArrayListExtra("images")
+        val imagesData = intent.getStringArrayExtra("images")
         images = ArrayList()
             for (value in imagesData!!) {
                images?.add(value)
             }
-        val masksData = intent.getIntegerArrayListExtra("masks")
+        val masksData = intent.getStringArrayExtra("masks")
         masks = ArrayList()
         for (value in masksData!!) {
             masks?.add(value)

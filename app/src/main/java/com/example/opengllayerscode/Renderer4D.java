@@ -59,8 +59,8 @@ public class Renderer4D implements GLSurfaceView.Renderer {
     private float[] mvpMatrix = new float[16];
     private SharedPreferences sharedPreferences;
     float aspectRatio;
-    private List<Integer> drawableIds;
-    private List<Integer> depthMapIds;
+    private List<String> drawableIds;
+    private List<String> depthMapIds;
 
     public Renderer4D(Context context) {
         this.context = context;
@@ -69,7 +69,7 @@ public class Renderer4D implements GLSurfaceView.Renderer {
 
     }
 
-    public void setLists(List<Integer> drawableIds, List<Integer> depthMapIds) {
+    public void setLists(List<String> drawableIds, List<String> depthMapIds) {
         this.drawableIds = drawableIds;
         this.depthMapIds = depthMapIds;
     }
@@ -231,7 +231,7 @@ public class Renderer4D implements GLSurfaceView.Renderer {
         }
     }
 
-    public void generateLayers(List<Integer> drawableIds, List<Integer> depthMapIds) {
+    public void generateLayers(List<String> drawableIds, List<String> depthMapIds) {
         //Initialize GLLayer and GLTextureHelper
         shaderCompiler = new ShaderCompiler();
         shaderCompiler.initializeProgram(vertexShader4D, fragmentShader4D);

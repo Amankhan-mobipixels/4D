@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
+import android.util.Base64;
 import android.util.Log;
 import androidx.annotation.DrawableRes;
 import java.util.List;
@@ -14,17 +15,18 @@ public class GLTextureHelper {
 
     private static final String TAG = "GLTextureHelper";
 
-    public static void generateLayers(int[] textures, List<Integer> drawableIds, int overlayColor,Context context) {
+    public static void generateLayers(int[] textures, List<String> drawableIds, int overlayColor,Context context) {
         int layerCount = drawableIds.size();
         Bitmap tempBitmap = null;
 
         for (int i = 0; i < textures.length; i++) {
             if (i < layerCount) {
                 // Load bitmap from drawable resource
-                int drawableId = drawableIds.get(i);
-                tempBitmap = decodeScaledFromRes(context.getResources(), drawableId);
+                String drawableId = drawableIds.get(i);
+//                tempBitmap = decodeScaledFromRes(context.getResources(), drawableId);
+                tempBitmap = BitmapFactory.decodeFile(drawableId);
                 if (tempBitmap == null) {
-                    Log.e(TAG, "Failed to decode bitmap from drawable: " + context.getResources().getResourceName(drawableId));
+//                    Log.e(TAG, "Failed to decode bitmap from drawable: " + context.getResources().getResourceName(drawableId));
                     return;
                 }
             } else {
@@ -51,15 +53,25 @@ public class GLTextureHelper {
         }
     }
 
-    private static Bitmap decodeScaledFromRes(Resources res, @DrawableRes int id) {
-        final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-
-        BitmapFactory.decodeResource(res, id, options);
-
-        options.inJustDecodeBounds = false;
-
-        return BitmapFactory.decodeResource(res, id, options);
-    }
-
+//    private static Bitmap decodeScaledFromRes(Resources res, @DrawableRes int id) {
+//        final BitmapFactory.Options options = new BitmapFactory.Options();
+//        options.inJustDecodeBounds = true;
+//
+//        BitmapFactory.decodeResource(res, id, options);
+//
+//        options.inJustDecodeBounds = false;
+//
+//        return BitmapFactory.decodeResource(res, id, options);
+//    }
+//private static Bitmap StringToBitMap(String encodedString){
+//    try{
+//        byte [] encodeByte = Base64.decode(encodedString,Base64.DEFAULT);
+//        Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+//        return bitmap;
+//    }
+//    catch(Exception e){
+//        e.getMessage();
+//        return null;
+//    }
+//}
 }
