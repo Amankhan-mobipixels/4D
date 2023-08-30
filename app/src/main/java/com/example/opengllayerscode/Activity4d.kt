@@ -26,6 +26,7 @@ class Activity4d : AppCompatActivity() {
                images?.add(value)
             }
         val masksData = intent.getStringArrayExtra("masks")
+
         masks = ArrayList()
         for (value in masksData!!) {
             masks?.add(value)
