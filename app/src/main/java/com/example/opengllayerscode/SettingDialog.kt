@@ -30,10 +30,10 @@ class SettingDialog(context: Context) :Dialog(context){
         binding.zoomIntensityTxt.text = "Background Zoom Intensity: ${ binding.zoomIntensitySeek.progress}"
 
         binding.rotationXAxisSeek.progress = sharedPreferences.getInt("rotationx", 10)
-        binding.rotationXAxisTxt.text = "Background Rotation x-axis: ${ binding.zoomIntensitySeek.progress}"
+        binding.rotationXAxisTxt.text = "Background Rotation x-axis: ${ binding.rotationXAxisSeek.progress}"
 
         binding.rotationYAxisSeek.progress = sharedPreferences.getInt("rotationy", 5)
-        binding.rotationYAxisTxt.text = "Background Rotation y-axis: ${ binding.zoomIntensitySeek.progress}"
+        binding.rotationYAxisTxt.text = "Background Rotation y-axis: ${ binding.rotationYAxisSeek.progress}"
         // SeekBar listeners
         binding.effectSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {

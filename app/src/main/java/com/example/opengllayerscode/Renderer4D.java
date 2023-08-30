@@ -204,14 +204,14 @@ public class Renderer4D implements GLSurfaceView.Renderer {
             Matrix.translateM(modelMatrix, 0, 0, 0, -depthIncrement * i);
             Matrix.setLookAtM(viewMatrix, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0);
             if (i == 0) {
-                if (backgroundRotationY==0){
+//                if (backgroundRotationY==0){
                     bottom = -0.8f;
                     top = 0.8f;
-                }
-                else {
-                    bottom = -0.8f;
-                    top = 0.8f;
-                }
+//                }
+//                else {
+//                    bottom = -0.8f;
+//                    top = 0.8f;
+//                }
 
                 // Original code for rendering with texture and displacement
                 Matrix.orthoM(projectionMatrix, 0, left, right, bottom, top, near, far);
