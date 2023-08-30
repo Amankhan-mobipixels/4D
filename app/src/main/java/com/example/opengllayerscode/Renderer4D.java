@@ -111,7 +111,10 @@ public class Renderer4D implements GLSurfaceView.Renderer {
 
         int zoom=sharedPreferences.getInt("zoomspeed",2);
         int intensity=sharedPreferences.getInt("zoomintensity",5);
-        if(zoom==1){
+        if(zoom==0){
+            zoomSpeed=0.0f;
+        }
+        else if(zoom==1){
             zoomSpeed=0.001f;
         }else if (zoom==2){
             zoomSpeed=0.002f;
@@ -133,7 +136,10 @@ public class Renderer4D implements GLSurfaceView.Renderer {
             zoomSpeed=0.01f;
         }
 
-        if(intensity==1){
+        if(intensity==0){
+            maxIntensity=0.0f;
+        }
+        else if(intensity==1){
             maxIntensity=0.05f;
         }else if (intensity==2){
             maxIntensity=0.06f;
@@ -169,12 +175,19 @@ public class Renderer4D implements GLSurfaceView.Renderer {
             }
         }
 
+        int backgroundRotationX=sharedPreferences.getInt("rotationx",10);
+        int backgroundRotationY=sharedPreferences.getInt("rotationy",5);
 
         double pitch = Math.atan2(-sensor.getX(), Math.sqrt(sensor.getY() * sensor.getY() + sensor.getZ() * sensor.getZ()));
         double roll = Math.atan2(sensor.getY(), Math.sqrt(sensor.getX() * sensor.getX() + sensor.getZ() * sensor.getZ()));
         float maxRotation = 10.0f; // Set the maximum rotation angle (in degrees)
-        float clampedPitch = Math.max(-maxRotation, Math.min((float) pitch * 5, maxRotation));
-        float clampedRoll = Math.max(-maxRotation, Math.min((float) roll * 10, maxRotation));
+
+        //move on x_axis
+        float clampedRoll = Math.max(-maxRotation, Math.min((float) roll * backgroundRotationX, maxRotation));
+        //move on y_axix
+        float clampedPitch = Math.max(-maxRotation, Math.min((float) pitch * backgroundRotationY, maxRotation));
+
+
 
         Log.d("SfsdfsaDf", "pitch: " + clampedPitch);
         Log.d("SfsdfsaDf", "roll: " + clampedRoll);
@@ -191,8 +204,15 @@ public class Renderer4D implements GLSurfaceView.Renderer {
             Matrix.translateM(modelMatrix, 0, 0, 0, -depthIncrement * i);
             Matrix.setLookAtM(viewMatrix, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0);
             if (i == 0) {
-                bottom = -0.8f;
-                top = 0.8f;
+                if (backgroundRotationY==0){
+                    bottom = -0.8f;
+                    top = 0.8f;
+                }
+                else {
+                    bottom = -0.8f;
+                    top = 0.8f;
+                }
+
                 // Original code for rendering with texture and displacement
                 Matrix.orthoM(projectionMatrix, 0, left, right, bottom, top, near, far);
                 Matrix.rotateM(modelMatrix, 0, clampedPitch, 1.0f, 0.0f, 0.0f);
@@ -205,7 +225,7 @@ public class Renderer4D implements GLSurfaceView.Renderer {
 //            Matrix.scaleM(modelMatrix,0,1+0.3f,1+0.3f,1+0.3f);
             Matrix.multiplyMM(mvpMatrix, 0, projectionMatrix, 0, viewMatrix, 0);
             Matrix.multiplyMM(mvpMatrix, 0, mvpMatrix, 0, modelMatrix, 0);
-            float disp = sharedPreferences.getInt("3deffect", 5);
+            float disp = sharedPreferences.getInt("4deffect", 5);
             Log.d("fdsfdsf", "onDrawFrame: " + disp);
             shaderCompiler.draw4D(textures[i], depthMapTextures[i], mvpMatrix, (float) pitch, (float) roll, disp/100);
         }
