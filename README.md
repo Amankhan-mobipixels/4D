@@ -13,7 +13,7 @@ add dependency in module level gradle
 ````
 dependencies:
 {
-implementation 'com.github.Amankhan-mobipixels:4D:1.1.3'
+implementation 'com.github.Amankhan-mobipixels:4D:1.1.4'
 }
 ````
 How to use:
