@@ -20,7 +20,7 @@ class SettingDialog(context: Context) :Dialog(context){
         sharedPreferences = context.getSharedPreferences("seekbarprefs", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
 
-        binding.effectSeek.progress = sharedPreferences.getInt("3deffect", 5)
+        binding.effectSeek.progress = sharedPreferences.getInt("4deffect", 5)
         binding.effectTxt.text = "4D Effect: ${binding.effectSeek.progress}"
 
         binding.zoomSpeedSeek.progress = sharedPreferences.getInt("zoomspeed", 2)
