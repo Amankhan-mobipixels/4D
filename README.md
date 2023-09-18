@@ -17,15 +17,13 @@ implementation 'com.github.Amankhan-mobipixels:4D:1.1.4'
 }
 ````
 How to use:
-
-     //versions 1.1.5
-     
+ 
      val intent = Intent(this, Activity4d::class.java)
         intent.putIntegerArrayListExtra("images", images)
         intent.putIntegerArrayListExtra("masks", masks)
         startActivity(intent)
 	
-   //version 1.1.6
+   //after version 1.1.5
    
     //launch service directly
     
