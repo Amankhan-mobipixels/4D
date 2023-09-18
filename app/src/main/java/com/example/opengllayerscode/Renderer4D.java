@@ -65,7 +65,7 @@ public class Renderer4D implements GLSurfaceView.Renderer {
     public Renderer4D(Context context) {
         this.context = context;
         sensor = new MotionSensorHelper(context);
-        sharedPreferences = context.getSharedPreferences("seekbarprefs", Context.MODE_PRIVATE);
+        sharedPreferences = context.getSharedPreferences("settingsData", Context.MODE_PRIVATE);
 
     }
 
@@ -109,8 +109,8 @@ public class Renderer4D implements GLSurfaceView.Renderer {
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
 
 
-        int zoom=sharedPreferences.getInt("zoomspeed",2);
-        int intensity=sharedPreferences.getInt("zoomintensity",5);
+        int zoom=sharedPreferences.getInt("zoom",2);
+        int intensity=sharedPreferences.getInt("intensity",5);
         if(zoom==0){
             zoomSpeed=0.0f;
         }
@@ -225,7 +225,7 @@ public class Renderer4D implements GLSurfaceView.Renderer {
 //            Matrix.scaleM(modelMatrix,0,1+0.3f,1+0.3f,1+0.3f);
             Matrix.multiplyMM(mvpMatrix, 0, projectionMatrix, 0, viewMatrix, 0);
             Matrix.multiplyMM(mvpMatrix, 0, mvpMatrix, 0, modelMatrix, 0);
-            float disp = sharedPreferences.getInt("4deffect", 5);
+            float disp = sharedPreferences.getInt("effect", 5);
             Log.d("fdsfdsf", "onDrawFrame: " + disp);
             shaderCompiler.draw4D(textures[i], depthMapTextures[i], mvpMatrix, (float) pitch, (float) roll, disp/100);
         }

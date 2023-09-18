@@ -17,16 +17,16 @@ class SettingDialog(context: Context) :Dialog(context){
         binding = CustomDialogLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        sharedPreferences = context.getSharedPreferences("seekbarprefs", Context.MODE_PRIVATE)
+        sharedPreferences = context.getSharedPreferences("settingsData", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
 
-        binding.effectSeek.progress = sharedPreferences.getInt("4deffect", 5)
+        binding.effectSeek.progress = sharedPreferences.getInt("effect", 5)
         binding.effectTxt.text = "4D Effect: ${binding.effectSeek.progress}"
 
-        binding.zoomSpeedSeek.progress = sharedPreferences.getInt("zoomspeed", 2)
+        binding.zoomSpeedSeek.progress = sharedPreferences.getInt("zoom", 2)
         binding.zoomSpeedTxt.text = "Background Zoom Speed: ${binding.zoomSpeedSeek.progress}"
 
-        binding.zoomIntensitySeek.progress = sharedPreferences.getInt("zoomintensity", 5)
+        binding.zoomIntensitySeek.progress = sharedPreferences.getInt("intensity", 5)
         binding.zoomIntensityTxt.text = "Background Zoom Intensity: ${ binding.zoomIntensitySeek.progress}"
 
         binding.rotationXAxisSeek.progress = sharedPreferences.getInt("rotationx", 10)

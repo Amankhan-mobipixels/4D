@@ -21,13 +21,13 @@ class Activity4d : AppCompatActivity() {
         setContentView(binding.root)
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
         val imagesData = intent.getStringArrayListExtra("images")
-        images = ArrayList()
+        images?.clear()
             for (value in imagesData!!) {
                images?.add(value)
             }
         val masksData = intent.getStringArrayListExtra("masks")
 
-        masks = ArrayList()
+        masks?.clear()
         for (value in masksData!!) {
             masks?.add(value)
         }
