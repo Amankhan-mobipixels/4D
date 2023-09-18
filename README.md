@@ -17,6 +17,7 @@ implementation 'com.github.Amankhan-mobipixels:4D:1.1.4'
 }
 ````
 How to use:
+
      //versions 1.1.5
      val intent = Intent(this, Activity4d::class.java)
         intent.putIntegerArrayListExtra("images", images)
@@ -24,7 +25,6 @@ How to use:
         startActivity(intent)
 
    //version 1.1.6
-
     //launch service directly
     val sharedPreferences = getSharedPreferences("settingsData", Context.MODE_PRIVATE)
         images?.clear()
