@@ -23,11 +23,8 @@ How to use:
         intent.putIntegerArrayListExtra("images", images)
         intent.putIntegerArrayListExtra("masks", masks)
         startActivity(intent)
-
    //version 1.1.6
-   
     //launch service directly
-    
     val sharedPreferences = getSharedPreferences("settingsData", Context.MODE_PRIVATE)
         images?.clear()
         masks?.clear()
