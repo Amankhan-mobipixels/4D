@@ -67,7 +67,6 @@ How to use:
         app:layout_constraintTop_toTopOf="parent" />
 
     // kotlin    
-{
 
  private var renderer4D: Renderer4D? = null
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,5 +88,4 @@ How to use:
         super.onPause()
         renderer4D?.stop()
         binding.glView.onPause()
-    }
     }
