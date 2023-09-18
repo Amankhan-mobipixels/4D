@@ -34,7 +34,7 @@
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:max="5"
-        android:min="0"
+        android:min="1"
         android:layout_height="wrap_content" />
 
     <TextView
