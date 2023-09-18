@@ -69,7 +69,6 @@ How to use:
     
 {
        private var renderer4D: Renderer4D? = null
-     
      override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
         binding.glView.setEGLContextClientVersion(2)
