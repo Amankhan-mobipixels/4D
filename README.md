@@ -27,8 +27,8 @@ How to use:
    
     //launch service directly
     images?.clear()
-        masks?.clear()
-        images?.add(value)
+        masks = ArrayList()
+        images = ArrayList()
 	masks?.add(value)
     val sharedPreferences = getSharedPreferences("settingsData", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
