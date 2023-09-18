@@ -26,12 +26,11 @@ How to use:
    //after version 1.1.5
    
     //launch service directly
-    
-    val sharedPreferences = getSharedPreferences("settingsData", Context.MODE_PRIVATE)
-        images?.clear()
+    images?.clear()
         masks?.clear()
         images?.add(value)
 	masks?.add(value)
+    val sharedPreferences = getSharedPreferences("settingsData", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString("effect", effectValue)
         editor.putString("intensity", intensityValue)
