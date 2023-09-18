@@ -66,9 +66,9 @@ How to use:
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    // kotlin   
-    
+    // kotlin    
 {
+
  private var renderer4D: Renderer4D? = null
         override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
