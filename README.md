@@ -19,12 +19,16 @@ implementation 'com.github.Amankhan-mobipixels:4D:1.1.4'
 How to use:
 
      //versions 1.1.5
+     
      val intent = Intent(this, Activity4d::class.java)
         intent.putIntegerArrayListExtra("images", images)
         intent.putIntegerArrayListExtra("masks", masks)
         startActivity(intent)
+	
    //version 1.1.6
+   
     //launch service directly
+    
     val sharedPreferences = getSharedPreferences("settingsData", Context.MODE_PRIVATE)
         images?.clear()
         masks?.clear()
@@ -64,6 +68,7 @@ How to use:
 
     // kotlin    
 {
+
  private var renderer4D: Renderer4D? = null
         override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
