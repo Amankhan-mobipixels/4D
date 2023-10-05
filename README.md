@@ -13,7 +13,7 @@ add dependency in module level gradle
 ````
 dependencies:
 {
-implementation 'com.github.Amankhan-mobipixels:4D:1.1.4'
+implementation 'com.github.Amankhan-mobipixels:4D:1.1.7'
 }
 ````
 How to use:
@@ -26,10 +26,12 @@ How to use:
    //after version 1.1.5
    
     //launch service directly
-    images?.clear()
+    masks?.clear()
+     images?.clear()
         masks = ArrayList()
         images = ArrayList()
 	masks?.add(value)
+        images?.add(value)
     val sharedPreferences = getSharedPreferences("settingsData", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putInt("effect", effectValue)
@@ -68,6 +70,12 @@ How to use:
         private var renderer4D: Renderer4D? = null
         override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
+        masks?.clear()
+        images?.clear()
+        masks = ArrayList()
+        images = ArrayList()
+	masks?.add(value)
+        images?.add(value)
         binding.glView.setEGLContextClientVersion(2)
         renderer4D = Renderer4D(this)
 	// must add masks and images first to call serLists
