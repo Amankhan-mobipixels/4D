@@ -38,7 +38,7 @@ class SettingDialog(context: Context) :Dialog(context){
         binding.effectSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 binding.effectTxt.text = "4D Effect: $progress"
-                editor.putInt("4deffect", progress)
+                editor.putInt("effect", progress)
                 editor.apply()
             }
 
@@ -50,7 +50,7 @@ class SettingDialog(context: Context) :Dialog(context){
         binding.zoomSpeedSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 binding.zoomSpeedTxt.text = "Background Zoom Speed: $progress"
-                editor.putInt("zoomspeed", progress)
+                editor.putInt("zoom", progress)
                 editor.apply()
             }
 
@@ -62,7 +62,7 @@ class SettingDialog(context: Context) :Dialog(context){
         binding.zoomIntensitySeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 binding.zoomIntensityTxt.text = "Background Zoom Intensity: $progress"
-                editor.putInt("zoomintensity", progress)
+                editor.putInt("intensity", progress)
                 editor.apply()
             }
 
