@@ -19,8 +19,8 @@ implementation 'com.github.Amankhan-mobipixels:4D:1.1.7'
 How to use:
  
      val intent = Intent(this, Activity4d::class.java)
-        intent.putIntegerArrayListExtra("images", images)
-        intent.putIntegerArrayListExtra("masks", masks)
+        intent.putStringArrayListExtra("images", images)
+        intent.putStringArrayListExtra("masks", masks)
         startActivity(intent)
 	
    //after version 1.1.5
