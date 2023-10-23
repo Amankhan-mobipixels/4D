@@ -26,16 +26,21 @@ class GLWallpaperService : WallpaperService() {
         private  var renderer4D: Renderer4D? = null
         override fun onCreate(surfaceHolder: SurfaceHolder) {
             super.onCreate(surfaceHolder)
+
+            if (glSurfaceView != null) {
+                glSurfaceView!!.onDestroy()
+                glSurfaceView = null
+            }
             glSurfaceView = WallpaperGLSurfaceView(this@GLWallpaperService)
             glSurfaceView?.setEGLContextClientVersion(2)
             renderer4D = Renderer4D(this@GLWallpaperService)
-            renderer4D?.setLists(images, masks)
             glSurfaceView?.setRenderer(renderer4D)
         }
 
         override fun onVisibilityChanged(visible: Boolean) {
             super.onVisibilityChanged(visible)
             if (visible) {
+                renderer4D?.setLists(images, masks)
                 glSurfaceView?.onResume()
                 renderer4D?.start()
             } else {
